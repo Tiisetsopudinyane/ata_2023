@@ -72,6 +72,7 @@
     width: 30%;
     position: absolute;
     margin: 27% 0 0 5%;
+    padding: 0;
     line-height: 1em;
     font-size: 20px;
 }
@@ -126,6 +127,7 @@
 }
 .services p{
     font-size: 20px;
+    padding: 0;
 }
 .case_studies{
     display: flex;
@@ -172,7 +174,7 @@
     height: max-content;
     background-color: rgb(86, 0, 126);
     color: white;
-    padding:1.5em;
+    padding:20px;
     display: block;
     font-size: 20px;
     text-align: center;
@@ -185,7 +187,7 @@
     width:30px;
     background: rgb(198, 68, 224);
     height: 4px;
-    margin:40px 10px 0 40px;
+    margin:40px 10px 0 20px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -197,22 +199,27 @@
  .contact_us{
     display: flex;
     margin-top: 40px;
+    padding: 0;
  }
  .footer_first_row_section{
     display: flex;
-    flex-wrap: wrap;
+    margin: 20px 0 40px 20px;
+    padding: 0;
  }
  .footer_project_in_mind{
-    flex: 1;
-    margin:40px;
+    padding: 0;
+    text-align: left;
  }
- .address{
+ .footer_project_in_mind h1{
+    width: 60%;
+ }
+ .address p, .email{
     flex:1;
-    margin:40px
+    padding: 0;
  }
- .address .email{
+ .address a{
     float: left;
-    margin-left:20px ;
+    text-decoration: underline;
  }
  .links {
   display: flex;
@@ -229,6 +236,10 @@
   display: flex; 
   flex-direction: column;
   padding: 20px;
+  align-items: start;
+}
+.column_career p{
+    padding: 0;
 }
 .case_study_images {
     text-align: center;
@@ -273,6 +284,9 @@
    margin-top: 450px;
 }
 
+.address{
+ margin-top: 20px;
+}
 
 }
 
