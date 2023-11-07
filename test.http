@@ -1,0 +1,13 @@
+
+
+###
+GET http://localhost:3011/api/getAllBrands
+content-type:"application/json"
+
+###
+POST http://localhost:3011/api/filter
+content-type:"application/json"
+
+{
+    "brandName":"bbc-black"
+}
