@@ -28,17 +28,32 @@
     display: flex;
     text-align: center;
 }
-.navbar ul li{
+.navbar ul li {
     list-style: none;
     display:inline;
     padding: 0;
     margin: 0 10px;
+    width: max-content;
     justify-content: space-between;
-    text-align: center;
+    text-align: left;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
 }
 .navbar ul{
     margin: auto;
     padding: auto;
+}
+.checkbtn{
+    color: white;
+    font-size: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
 }
 .lets_talk{
     color: rgb(136, 25, 187);
@@ -167,6 +182,9 @@
     display: flex;
     margin-top: 40px;
 }
+.trusted_brands{
+    margin: 40px 0 20px 40px;
+}
 .select{
     color: rgb(0, 0, 0);
     background-color: white;
@@ -175,18 +193,19 @@
     position: absolute;
     font-weight: bold;
     width: max-content;
-    margin: 20px 0 20px 40px;
+    margin: 20px 0 40px 40px;
     text-align: center;
 }
 .image-container{
     width: 100%;
     display: inline;
-    margin: 40px 0 40px 20px;
+    margin: 80px 0 80px 20px;
 
 }
 .image-container img{
     width: 14%;
     padding: 2%;
+    margin-top: 40px;
     max-height: 100px;
     
 }
@@ -271,6 +290,33 @@
   }
   
 @media screen and (max-width: 768px) {
+    .checkbtn{
+        display: block;
+    }
+    #menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    #menu.show-menu{
+        left:0;
+       
+    }
+   
+    .navbar ul li{
+        display: block;
+        margin: 20px 0;
+        line-height: 5px;
+    }
+    .navbar ul li a{
+        font-size: 20px;
+        color: rgb(255, 2, 2);
+        visibility: visible;
+    }
     .swiper-slide h1{
         position: absolute;
         top: 60%;
@@ -310,12 +356,16 @@
 .address{
  margin-top: 20px;
 }
+.image-container{
+    width: 100%;
+    display: inline;
+    margin: 80px 0 40px 20px;
+
+}
 .image-container img{
     width: 14%;
     padding: 2%;
     max-height: 40px;
-    
-    
 }
 .images{
     width: 90%;
@@ -329,7 +379,32 @@
 }
 
  @media screen and (max-width: 1200px) {
-  .services{
+    .checkbtn{
+        display: block;
+    }
+    #menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    #menu.show-menu{
+        left:0;
+    }
+    .navbar ul li{
+        display: block;
+        margin: 20px 0;
+        line-height: 5px;
+    }
+    .navbar ul li a{
+        font-size: 20px;
+        visibility: visible;
+        color: rgb(243, 0, 0);
+    }
+    .services{
     display: block;
   }
   .swiper-slide h1{
@@ -351,6 +426,12 @@
 .service_header h1{
     width: 80%;
     padding-right: 20px;
+}
+.image-container{
+    width: 100%;
+    display: inline;
+    margin: 80px 0 40px 20px;
+
 }
 
 .footer{display: block;}

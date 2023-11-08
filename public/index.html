@@ -5,22 +5,29 @@
     <title>Scan Candidate</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="index.alpine.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body x-data="images">
     <div class="navbar">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+      </label>
       <div class="logo">
-        <img src="/images/logo.svg"/>
+        <img src="/images/logo.svg" alt="logo"/>
       </div>
-        <ul>
-          <li>Services</li>
-          <li>Industries</li>
-          <li>Cases</li>
-          <li>Contact</li>
+      
+        <ul id="menu">
+          <li><a  href="#targetServices">Services</a></li>
+          <li><a  href="#targetindustries">Industries</a></li>
+          <li><a  href="#targetcases">Cases</a></li>
+          <li><a  href="#targetcontacts">Contact</a></li>
         </ul>
+        
         <button class="lets_talk">Let's Talk</button>
     </div>
     
@@ -37,7 +44,7 @@
                 We offer a complete range of bespoke design and development services help you turn your ideas into digital matserpieces
             </h1>
         </div>
-        <div class="services">
+        <div class="services" id="targetServices">
             <div class="web_development">
                 <h2> Web development</h2>
                 <p> We are using cutting-edge web development technologies to help our clients fulfill their business goals through functional, realible solutions.</p>
@@ -56,7 +63,7 @@
             </div>
         </div>
         <div class="case_studies"><div class="line"></div><h2>Case studies</h2></div> 
-        <div class="swiper">
+        <div class="swiper" id="targetcases">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <img src="./images/olympian.jpeg"/>
@@ -83,21 +90,28 @@
           
           
         <div class="youll_be_in_company"><div class="line"></div><h2>You'll be in good company</h2></div> 
-        <select class="select" x-model="selectedBrand">
+        <div class="trusted_brands" >
+          <h1>Trusted by leading brands</h1>
+        </div>
+        <select class="select" x-model="selectedBrand" >
           <option value="">filter</option>
-          <template x-for="brand in brandImages" :key="brand.filename">
-              <option x-text="brand.filename" x-bind:value="brand.filename"></option>
+          <template x-for="image in brandImages" :key="image.filename">
+              <option x-text="image.filename" x-bind:value="image.filename"></option>
           </template>
       </select>
       <div class="images">
+        <div id="targetindustries"></div>
           <template x-for="image in brandImages" :key="image.filename">
-              <div class="image-container" x-if="selectedBrand === '' || selectedBrand === image.filename">
-                  <img :src="'data:image/svg+xml;base64,' + image.base64" alt="SVG Image">
-              </div>
+             <div class="image-container" >
+              <template  x-if="selectedBrand === '' || selectedBrand === image.filename">
+                <img :src="'data:image/svg+xml;base64,' + image.base64" alt="SVG Image">
+            </template>
+             </div>
           </template>
-      </div>
+          
+      </div >
       
-  <div class="footer">
+  <div class="footer" id="targetcontacts">
     <div class="contact_us"><div class="bright_line"></div><h2>Contact us</h2></div>
     <div class="footer_first_row_section">
         <div class="footer_project_in_mind">
@@ -182,6 +196,21 @@
         },
       
       });
+      // Get references to the checkbox and the ul element
+// Get references to the checkbox and the menu (ul element)
+const checkbox = document.getElementById('check');
+const menu = document.getElementById('menu');
+
+// Add an event listener to the checkbox
+checkbox.addEventListener('change', function () {
+  if (checkbox.checked) {
+    menu.style.left = '0'; 
+    console.log("here")// Show the menu by setting the left property to 0
+  } else {
+    menu.style.left = '-100%'; // Hide the menu by setting the left property to -100%
+  }
+});
+
 </script>    
 </body>
 </html>
