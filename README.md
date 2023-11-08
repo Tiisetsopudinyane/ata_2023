@@ -27,9 +27,9 @@ To get started with this project, follow these steps:
 
    ```bash
    git clone https://github.com/Tiisetsopudinyane/ata_2023.git
-2. run the project using npm run dev
-   ## it runs on nodemon
-   ## press ctrl+shift+p to connect to the database
+2. run the project using ## npm run dev
+    it runs on nodemon
+    press ctrl+shift+p to connect to the database
 
 
 
