@@ -30,6 +30,7 @@ To get started with this project, follow these steps:
 2. run the project using
    ## npm run dev.
 3. press ctrl+shift+p to connect to the database
+4. url for homePage after running the project http://localhost:3011/index.html
 
 
 
